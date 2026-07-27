@@ -1,8 +1,8 @@
 export interface Project {
   id: string;
   title: string;
-  shortDesc: string;
-  fullDesc: string;
+  category: string;
+  description: string;
   technologies: string[];
   githubUrl: string;
   mockupIllustration: string;
@@ -57,15 +57,35 @@ export const PORTFOLIO_DATA = {
     instagram: "https://www.instagram.com/sanketyrrr?igsh=aTY2dW41Zmh6enNq"
   },
 
-  project: {
-    id: "smart-university-management",
-    title: "Smart University Management System",
-    shortDesc: "A Core Python project for managing university operations including student records, faculty management, attendance, courses, and administrative tasks.",
-    fullDesc: "A Core Python-based University Management System designed to simplify academic administration. The application demonstrates fundamental software engineering concepts by managing student records, faculty information, courses, attendance, and administrative operations through a clean command-line interface.",
-    technologies: ["Core Python", "File Handling", "Object-Oriented Programming (OOP)", "CLI Interface"],
-    githubUrl: "https://lnkd.in/gW5JTuem",
-    mockupIllustration: "/assets/images/smart_university_management.png"
-  } as Project,
+  projects: [
+    {
+      id: "nexus-ai",
+      title: "Nexus AI",
+      category: "AI Assistant • Full Stack • Generative AI",
+      description: "An intelligent AI-powered assistant built with modern full-stack technologies, featuring real-time conversations, secure authentication, Retrieval-Augmented Generation (RAG), document analysis, and an elegant responsive interface. The application combines AI, productivity, and modern UI/UX into a single seamless experience.",
+      technologies: ["React", "Tailwind CSS", "FastAPI", "Python", "Firebase", "Gemini API", "RAG", "GitHub"],
+      githubUrl: "https://github.com/sankettiwari943-coder/nexus-ai",
+      mockupIllustration: "/assets/images/nexus_ai.png"
+    },
+    {
+      id: "developer-portfolio",
+      title: "Developer Portfolio",
+      category: "Personal Brand • React • 3D Portfolio",
+      description: "A premium interactive portfolio showcasing my projects, technical skills, achievements, GitHub contributions, certifications, and development journey. Designed with immersive animations, responsive layouts, and a modern futuristic interface to create a memorable user experience.",
+      technologies: ["React", "Vite", "Tailwind CSS", "GSAP", "Framer Motion", "Three.js", "React Three Fiber", "GitHub", "Netlify"],
+      githubUrl: "https://github.com/sankettiwari943-coder/developer-portfolio",
+      mockupIllustration: "/assets/images/developer_portfolio.png"
+    },
+    {
+      id: "2048-nexus",
+      title: "2048 Nexus",
+      category: "Game Development • JavaScript",
+      description: "A modern reimagining of the classic 2048 puzzle game with polished animations, responsive controls, score tracking, smooth transitions, and an immersive user experience. Built from scratch with optimized game logic and an elegant futuristic interface.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      githubUrl: "https://github.com/sankettiwari943-coder/2048-nexus",
+      mockupIllustration: "/assets/images/2048_nexus.png"
+    }
+  ] as Project[],
 
   skills: [
     {
@@ -135,9 +155,12 @@ export const PORTFOLIO_DATA = {
 
   certificationsInfo: {
     title: "Certifications & Continuous Learning",
-    description: "I believe in continuous learning and regularly complete industry-recognized certifications to strengthen my knowledge in Artificial Intelligence, Software Development, Cloud Technologies, Cybersecurity, and emerging technologies. Instead of listing every certificate here, you can explore my complete and up-to-date certification portfolio on LinkedIn.",
+    description: "I believe in continuous learning and regularly complete industry-recognized certifications to strengthen my knowledge in Artificial Intelligence, Software Development, Cloud Technologies, Cybersecurity, and emerging technologies.",
     linkedinUrl: "https://www.linkedin.com/in/sanket-tiwari-5771a9380",
-    buttonText: "View All Certifications on LinkedIn",
+    linkedinButtonText: "View All Certifications on LinkedIn",
+    driveUrl: "https://drive.google.com/drive/folders/1iANCj1wtB5kD6b2S9YCRKxU7TUDSw6T8?usp=drive_link",
+    driveButtonText: "Google Drive Certificates",
+    caption: "Explore my complete collection of certifications in AI, Generative AI, Software Development, Cloud Computing, and Cybersecurity.",
     achievementIcons: ["🏆", "🎓", "🚀", "📜"]
   },
 
@@ -157,8 +180,8 @@ export const PORTFOLIO_DATA = {
         answer: "Sanket's core tech stack includes Python, Java, C, C++, JavaScript, React.js, HTML5, CSS3, Tailwind CSS, Generative AI, Prompt Engineering, Git/GitHub, and LeetCode problem solving."
       },
       {
-        keywords: ["project", "university", "management", "system", "python project", "smart"],
-        answer: "Sanket's flagship project is the 'Smart University Management System' built using Core Python, OOP, and File Handling. It streamlines student records, faculty data, attendance, and administrative tasks."
+        keywords: ["project", "nexus", "portfolio", "2048", "ai", "game", "projects", "sums"],
+        answer: "Sanket has engineered three major projects: 1) Nexus AI — an intelligent RAG-powered AI assistant built with React, FastAPI, Python & Gemini API; 2) Developer Portfolio — a 3D interactive personal portfolio built with React, Three.js, GSAP & Framer Motion; 3) 2048 Nexus — a modern reimagining of the classic 2048 puzzle game with polished animations and score tracking."
       },
       {
         keywords: ["certif", "certificate", "license", "course", "learning"],

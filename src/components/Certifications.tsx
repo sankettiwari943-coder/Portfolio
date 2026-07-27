@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { motion } from 'framer-motion';
-import { Award, ArrowRight, Linkedin, ShieldCheck } from 'lucide-react';
+import { Award, ArrowRight, Linkedin, ShieldCheck, ExternalLink } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 export const Certifications: React.FC = memo(() => {
@@ -30,9 +30,9 @@ export const Certifications: React.FC = memo(() => {
         {/* Ambient Radial Cyan Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#00E5FF]/10 rounded-full blur-3xl pointer-events-none group-hover:bg-[#00E5FF]/20 transition-all duration-500" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center z-10 relative">
-          {/* Left Side Text & Content */}
-          <div className="lg:col-span-8 space-y-6">
+        <div className="flex flex-col space-y-8 z-10 relative">
+          {/* Top Info Area */}
+          <div className="space-y-6">
             {/* Floating Achievement Icons */}
             <div className="flex items-center justify-center sm:justify-start gap-4">
               {certInfo.achievementIcons.map((icon, idx) => (
@@ -78,22 +78,47 @@ export const Certifications: React.FC = memo(() => {
             </div>
           </div>
 
-          {/* Right Side Call To Action Button */}
-          <div className="lg:col-span-4 flex justify-center lg:justify-end pt-4 lg:pt-0">
+          {/* Action Buttons Section: Side-by-side on desktop/tablet, stacked on mobile */}
+          <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 sm:gap-6">
+            {/* LinkedIn Button */}
             <a
               href={certInfo.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-3 px-8 py-5 rounded-2xl bg-[#00E5FF] text-black font-extrabold text-sm tracking-wide shadow-[0_0_30px_rgba(0,229,255,0.5)] hover:shadow-[0_0_50px_rgba(0,229,255,0.9)] transition-all duration-300 transform hover:scale-105 active:scale-95 overflow-hidden"
+              aria-label="View all certifications on LinkedIn"
+              className="group relative inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-[#00E5FF] text-black font-extrabold text-sm tracking-wide shadow-[0_0_25px_rgba(0,229,255,0.4)] hover:shadow-[0_0_45px_rgba(0,229,255,0.85)] transition-all duration-300 transform hover:scale-105 active:scale-95 overflow-hidden w-full sm:w-auto"
             >
               {/* Shine Sweep Overlay */}
               <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
 
-              <Linkedin className="w-5 h-5 text-black" />
-              <span>{certInfo.buttonText}</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300 text-black" />
+              <Linkedin className="w-5 h-5 text-black group-hover:scale-110 transition-transform" />
+              <span>{certInfo.linkedinButtonText}</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 text-black" />
+            </a>
+
+            {/* Google Drive Certificates Button */}
+            <a
+              href={certInfo.driveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View all certifications on Google Drive"
+              className="group relative inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-white/5 border border-[#00E5FF]/40 text-white font-extrabold text-sm tracking-wide hover:border-[#00E5FF] hover:bg-[#00E5FF]/10 hover:text-[#00E5FF] shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:shadow-[0_0_35px_rgba(0,229,255,0.4)] transition-all duration-300 transform hover:scale-105 active:scale-95 overflow-hidden w-full sm:w-auto"
+            >
+              {/* Google Drive Folder SVG Icon */}
+              <svg className="w-5 h-5 text-[#00E5FF] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                <path d="M12 11v6" />
+                <path d="M9 14h6" />
+              </svg>
+              <span>{certInfo.driveButtonText}</span>
+              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300 text-[#00E5FF]" />
             </a>
           </div>
+
+          {/* Caption */}
+          <p className="text-xs font-mono text-[#888888] pt-1 text-center sm:text-left">
+            {certInfo.caption}
+          </p>
         </div>
       </motion.div>
     </section>
@@ -101,3 +126,4 @@ export const Certifications: React.FC = memo(() => {
 });
 
 Certifications.displayName = 'Certifications';
+export default Certifications;
